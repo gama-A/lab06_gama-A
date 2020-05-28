@@ -1,5 +1,5 @@
 // heap.cpp
-// Diba Mirza
+// Gama Aristondo
 
 #include "heap.h"
 #include <iostream>
