@@ -18,6 +18,16 @@ class Heap{
     
  private:
     std::vector<int> vdata; //store the binary heap tree as a dynamic array
+    
+    void fixHeap(){
+        for(int i = 1; i < vdata.size(); i++){
+            if(vdata.at(i) < vdata.at((i-1)/2)){
+                int temp = vdata.at(i);
+                vdata.at(i) = vdata.at((i-1)/2);
+                vdata.at((i-1)/2) = temp;
+            }
+        }
+    }
 };
 
 #endif

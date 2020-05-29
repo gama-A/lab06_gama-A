@@ -3,6 +3,7 @@
 
 #include "heap.h"
 #include <iostream>
+#include <vector>
 using std::cout;
 
 // Pushes a value into the heap, then ensures
@@ -13,23 +14,22 @@ void Heap::push(int value){
       return;
   }
   vdata.push_back(value);
-  int size = vdata.size();
-  int parent = (size-1)/2;
-  if(vdata.at(size-2) < vdata.at(parent)) {
-      int temp = vdata.at(parent);
-  }
+  fixHeap();
 }
 
 // Pops the minimum value off the heap
 // (but does not return it), then ensures
 // the heap is correctly arranged
 void Heap::pop(){
-
+  vdata.erase(vdata.begin());
+  if(!vdata.empty()){
+      fixHeap();
+  }
 }
 
 // Returns the minimum element in the heap
 int Heap::top(){
-  return 0;
+  return vdata.front();
 }
 
 // Returns true if the heap is empty, false otherwise
